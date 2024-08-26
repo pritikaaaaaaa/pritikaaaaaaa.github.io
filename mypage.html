@@ -9,11 +9,12 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background: linear-gradient(to bottom, black, #000080); /* Gradient background: black to blue */
+            color: #fff;
+            overflow: hidden;
+            height: 100vh;
         }
         header {
-            background-color: #4CAF50;
             color: white;
             padding: 20px;
             text-align: center;
@@ -22,11 +23,12 @@
             max-width: 900px;
             margin: 20px auto;
             padding: 20px;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background for content */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
-        h1 {
-            color: #333;
+        h1, h2, p {
+            color: #fff;
         }
         p {
             font-size: 18px;
@@ -37,7 +39,7 @@
             padding: 0;
         }
         ul li {
-            background-color: #e0e0e0;
+            background-color: rgba(255, 255, 255, 0.2);
             margin: 10px 0;
             padding: 10px;
             border-radius: 5px;
@@ -45,13 +47,67 @@
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #333;
+            background-color: rgba(0, 0, 0, 0.5);
             color: white;
             margin-top: 20px;
+            border-radius: 0 0 10px 10px;
+        }
+        /* Shooting stars */
+        .stars {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: transparent;
+            overflow: hidden;
+        }
+        .star {
+            width: 2px;
+            height: 2px;
+            background: white;
+            position: absolute;
+            border-radius: 50%;
+            animation: shootingStar 2s linear infinite;
+            box-shadow: 0px 0px 5px white;
+        }
+        @keyframes shootingStar {
+            0% {
+                transform: translateX(0px) translateY(0px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-1000px) translateY(-1000px);
+                opacity: 0;
+            }
+        }
+        /* 2 Truths 1 Lie styles */
+        .game-section {
+            margin-top: 30px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .game-section ul li {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .game-section ul li:hover {
+            background-color: rgba(255, 255, 255, 0.4);
         }
     </style>
 </head>
 <body>
+
+<div class="stars">
+    <!-- Shooting stars -->
+    <div class="star" style="top: 10%; left: 90%; animation-delay: 0s;"></div>
+    <div class="star" style="top: 40%; left: 80%; animation-delay: 0.5s;"></div>
+    <div class="star" style="top: 70%; left: 70%; animation-delay: 1s;"></div>
+    <div class="star" style="top: 30%; left: 60%; animation-delay: 1.5s;"></div>
+    <div class="star" style="top: 20%; left: 50%; animation-delay: 2s;"></div>
+</div>
 
 <header>
     <h1>Welcome to Pritika Kashyap's Website</h1>
@@ -60,7 +116,7 @@
 <div class="container">
     <section>
         <h2>About Me</h2>
-        <p>Hi! I'm Pritika Kashyap, currently studying Information Systems at SMU. I have a passion for technology and love exploring new trends in the field.</p>
+        <p>Hi! I'm Pritika Kashyap, currently studying Information Systems at SMU. I have a passion for technology and love to explore the world of AI (although I just started <span>&#128577;</span>).</p>
     </section>
 
     <section>
@@ -68,6 +124,16 @@
         <ul>
             <li>Cycling - I enjoy cycling through scenic routes in my free time.</li>
             <li>Playing with Yoyo - Yoyo is my neighbor's dog, and I love spending time with him.</li>
+        </ul>
+    </section>
+
+    <section class="game-section">
+        <h2>2 Truths and 1 Lie</h2>
+        <p>Can you guess which one is the lie?</p>
+        <ul>
+            <li>I have a twin.</li>
+            <li>I have a dog.</li>
+            <li>I have never eaten sushi.</li>
         </ul>
     </section>
 </div>
