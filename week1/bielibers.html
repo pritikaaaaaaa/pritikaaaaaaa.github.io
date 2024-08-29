@@ -1,101 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Justin Bieber Fan Page</title>
-    <link rel="stylesheet" href="styles.css">
-  <style>body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
-    margin: 0;
-    padding: 0;
-    color: #333;
-}
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
 
-header {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #fff;
-    background-color: #ff6363;
-    padding: 20px;
-    border-radius: 10px;
-}
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+            background-color: #ff6363;
+            padding: 20px;
+            border-radius: 10px;
+        }
 
-header h1 {
-    margin: 0;
-    font-size: 36px;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #fff;
-}
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #fff;
+        }
 
-header p {
-    font-size: 18px;
-}
+        header p {
+            font-size: 18px;
+        }
 
-.intro, .facts, .qna {
-    margin-bottom: 30px;
-}
+        .intro,
+        .facts,
+        .qna {
+            margin-bottom: 30px;
+        }
 
-h2 {
-    color: #ff6363;
-    font-size: 28px;
-    margin-bottom: 15px;
-}
+        h2 {
+            color: #ff6363;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
 
-ul {
-    list-style-type: square;
-    padding-left: 20px;
-}
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
 
-ul li {
-    margin: 10px 0;
-    font-size: 18px;
-}
+        ul li {
+            margin: 10px 0;
+            font-size: 18px;
+        }
 
-.qna input[type="text"] {
-    width: calc(100% - 22px);
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid #feb47b;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
+        .qna input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #feb47b;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
 
-.qna button {
-    background-color: #ff6363;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
+        .qna button {
+            background-color: #ff6363;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
 
-.qna button:hover {
-    background-color: #ff7e5f;
-}
+        .qna button:hover {
+            background-color: #ff7e5f;
+        }
 
-footer {
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #ff6363;
-    color: #fff;
-    border-radius: 10px;
-}
-</style>
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ff6363;
+            color: #fff;
+            border-radius: 10px;
+        }
+
+        .question-item {
+            background-color: #ffebeb;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 1px solid #feb47b;
+        }
+
+        .images {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .images img {
+            width: 32%;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -106,6 +130,12 @@ footer {
         <section class="intro">
             <h2>Welcome, Beliebers!</h2>
             <p>Welcome to the ultimate Justin Bieber fan page! Here, you can discover fun facts about Justin, stay updated with his latest music, and ask any questions you have about him. Let's spread the Bieber fever!</p>
+        </section>
+
+        <section class="images">
+            <img src="/mnt/data/justin1_720.jpg" alt="Justin Bieber Image 1">
+            <img src="/mnt/data/justin2_721.png" alt="Justin Bieber Image 2">
+            <img src="/mnt/data/justin5_720.jpg" alt="Justin Bieber Image 3">
         </section>
 
         <section class="facts">
@@ -132,28 +162,27 @@ footer {
         </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('qna-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const questionInput = document.getElementById('question');
+            const questionText = questionInput.value;
+
+            if (questionText.trim()) {
+                const questionsList = document.getElementById('questions-list');
+
+                const questionItem = document.createElement('div');
+                questionItem.className = 'question-item';
+                questionItem.innerHTML = `<p><strong>Question:</strong> ${questionText}</p><p><strong>Answer:</strong> We're working on finding the answer for you!</p>`;
+
+                questionsList.appendChild(questionItem);
+
+                questionInput.value = '';
+            }
+        });
+    </script>
 </body>
+
 </html>
-
-
-document.getElementById('qna-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const questionInput = document.getElementById('question');
-    const questionText = questionInput.value;
-    
-    if (questionText.trim()) {
-        const questionsList = document.getElementById('questions-list');
-        
-        const questionItem = document.createElement('div');
-        questionItem.className = 'question-item';
-        questionItem.innerHTML = `<p><strong>Question:</strong> ${questionText}</p><p><strong>Answer:</strong> We're working on finding the answer for you!</p>`;
-        
-        questionsList.appendChild(questionItem);
-        
-        questionInput.value = '';
-    }
-});
-
 
